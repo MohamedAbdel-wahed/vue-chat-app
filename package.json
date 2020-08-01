@@ -24,6 +24,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "firebase": "^7.17.1",
     "postcss-cli": "^7.1.1",
+    "slugify": "^1.4.5",
     "tailwindcss": "^1.5.2",
     "vue-template-compiler": "^2.6.11"
   }

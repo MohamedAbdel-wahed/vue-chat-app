@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="overflow-hidden">
     <Navbar />
     <router-view/>
   </div>
@@ -12,7 +12,8 @@ export default {
   name: 'App',
   components:{
     Navbar
-  }
+  },
+ 
 }
-</script>>
+</script>
 
