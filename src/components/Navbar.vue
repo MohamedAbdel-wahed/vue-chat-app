@@ -49,7 +49,6 @@ export default {
    },
    mounted(){
 
-     console.log(firebase.auth().currentUser);
    }
 
 }

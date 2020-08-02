@@ -58,7 +58,7 @@ export default {
                                                     user_id:cred.user.uid,
                                                     username:this.username
                                                }).then(()=>{
-                                                    this.$router.push({name: 'Chat', params:{username: this.slug}})
+                                                    this.$router.push({name: 'Chat', params:{alias: this.slug}})
                                                })
                                            }).catch(err=>{
                                                this.error=err.message

@@ -38,7 +38,8 @@ export default {
                                 let userId= cred.user.uid
                                 db.collection('users').where('user_id','==',userId).get().then(result=>{
                                    result.docs.forEach(doc=>{
-                                      this.$router.push({name: 'Chat', params:{username: doc.data().alias}})
+                                      this.error=null
+                                      this.$router.push({name: 'Chat', params:{alias: doc.data().alias}})
                                    })
                                 })
                           }).catch(err=>{
