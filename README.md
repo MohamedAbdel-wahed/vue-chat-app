@@ -1,4 +1,4 @@
-# chat-app
+# chat-app Using Vuejs And Firebase
 
 ## Project setup
 ```
