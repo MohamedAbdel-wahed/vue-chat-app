@@ -4,6 +4,7 @@ import Home from '../views/Home'
 import Signup from '@/components/Signup'
 import Signin from '@/components/Signin'
 import Chat from '@/components/Chat'
+import Friends from '@/components/Friends'
 import NotFound from '@/components/NotFound'
 import db from '@/firebase/init'
 import firebase from 'firebase/app'
@@ -40,22 +41,33 @@ export default new VueRouter({
         firebase.auth().onAuthStateChanged(user=>{
           if(user){
             db.collection('users').where('alias','==', to.params.alias).get().then(result=>{
-              result.docs.forEach(doc=>{
-                let sus_user_id= doc.data().user_id;
-                if(sus_user_id === user.uid){
-                  next()
-                }else{
+              
+                if(result.docs.length>0){
+                   result.docs.forEach(doc=>{
+                         let sus_user_id= doc.data().user_id;
+                         if(sus_user_id === user.uid){
+                              next()
+                         }
+                         else{
+                           next({name: 'NotFound'})
+                         }
+                    })
+                }
+                else{
                   next({name: 'NotFound'})
                 }
-             })
             })
-
           }
           else{
             next({name:'Signin'})
           }
         })
       }
+    },
+    {
+      path: '/friends',
+      name: 'Friends',
+      component: Friends
     },
     {
       path:'*',

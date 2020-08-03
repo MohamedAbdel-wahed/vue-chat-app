@@ -54,7 +54,7 @@ export default {
                     userId:change.doc.data().userId,
                     username:change.doc.data().username,
                     content:change.doc.data().content,
-                    time:timezone.format('LT')
+                    time:timezone.format('llll')
                 })   
              }
 
