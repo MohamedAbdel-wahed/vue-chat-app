@@ -21,25 +21,26 @@
                     <a class="cursor-pointer" @click="signout()">SignOut</a>
                 </li>
             </ul>
-            <button class="ml-auto mr-2 inline-block sm:hidden focus:outline-none focus:shadow-outline">
-                <img @click="showMenu=true" v-if="!showMenu" src="@/assets/images/menu.png" alt="" class="w-6 h-6">
-                <img @click="showMenu=false" v-if="showMenu" src="@/assets/images/close.png" alt="" class="w-6 h-6">
+            <button class="ml-auto mr-2 inline-block sm:hidden focus:outline-none">
+                <img @click="showMenu=true" v-if="!showMenu" src="@/assets/images/menu.png" alt="" class="w-6 h-6 opacity-75 hover:opacity-100">
+                <img @click="showMenu=false" v-if="showMenu" src="@/assets/images/close.png" alt="" class="w-6 h-6 opacity-75 hover:opacity-100">
             </button>
-            <div v-if="showMenu" class="fixed top-0 mt-16 right-0 h-screen w-1/2 bg-white py-6 px-3 border-l-2 border-gray-400">
+            <button v-if="showMenu" @click="showMenu=false" class="fixed inset-0 mt-16 w-full h-full bg-gray-800 opacity-25"></button>
+            <div v-if="showMenu" class="fixed top-0 mt-16 right-0 h-screen w-1/2 bg-white py-6 px-3 border-l border-gray-400">
                 <ul>
-                    <li  v-if="!loggedIn" @click="showMenu=false" class="text-gray-700 py-2 border-b border-gray-200 mt-4 font-bold text-center">
+                    <li  v-if="!loggedIn" @click="showMenu=false" class="text-gray-700 py-2 border-b border-gray-200 mt-4 font-bold text-center hover:bg-gray-200 cursor-pointer rounded">
                         <router-link :to="{name: 'Signup'}">SignUp</router-link>
                     </li>
-                    <li  v-if="!loggedIn" @click="showMenu=false" class="text-gray-700 py-2 border-b border-gray-200 mt-4 font-bold text-center">
+                    <li  v-if="!loggedIn" @click="showMenu=false" class="text-gray-700 py-2 border-b border-gray-200 mt-4 font-bold text-center hover:bg-gray-200 cursor-pointer rounded">
                         <router-link :to="{name: 'Signin'}">SignIn</router-link>
                     </li>
-                     <li  v-if="loggedIn" @click="showMenu=false" class="text-gray-700 py-2 border-b border-gray-200 mt-4 font-bold text-center">
+                     <li  v-if="loggedIn" @click="showMenu=false" class="text-gray-700 py-2 border-b border-gray-200 mt-4 font-bold text-center hover:bg-gray-200 cursor-pointer rounded">
                         <router-link :to="{name: 'Chat', params:{alias: alias}}">Chat</router-link>
                     </li>
-                    <li  v-if="loggedIn" @click="showMenu=false" class="text-gray-700 py-2 border-b border-gray-200 mt-4 font-bold text-center">
+                    <li  v-if="loggedIn" @click="showMenu=false" class="text-gray-700 py-2 border-b border-gray-200 mt-4 font-bold text-center hover:bg-gray-200 cursor-pointer rounded">
                         <router-link :to="{name: 'Friends'}">Friends</router-link>
                     </li>
-                    <li  v-if="loggedIn" class="text-gray-700 py-2 border-b border-gray-200 mt-4 font-bold text-center">
+                    <li  v-if="loggedIn" class="text-gray-700 py-2 border-b border-gray-200 mt-4 font-bold text-center hover:bg-gray-200 cursor-pointer rounded">
                         <a class="cursor-pointer" @click="signout()">SignOut</a>
                     </li>
                 </ul>
