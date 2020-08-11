@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "process": "postcss ./tailwind.css -o ./src/assets/style.css"
+    "process": "postcss ./tailwind.css -o ./src/assets/style.css",
+    "watch": "postcss ./tailwind.css -o ./src/assets/style.css --watch"
   },
   "dependencies": {
     "core-js": "^3.6.5",

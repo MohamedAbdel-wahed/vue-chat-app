@@ -2,7 +2,7 @@
    <div id="navbar">
        <nav class="w-full h-16 px-4 sm:px-8 md:px-32 bg-indigo-500 fixed top-0 flex items-center text-white select-none z-20">
             <div class="text-xl md:text-2xl font-extrabold">
-                <a href="/">Edchat</a>
+                <a href="/">AbbyChat</a>
             </div>
             <ul class=" ml-auto hidden sm:flex font-semibold text-base md:text-lg">
                 <li v-if="!loggedIn" class="mr-3 sm:mr-4 md:mr-6 font-semibold hover:text-indigo-200">
@@ -13,9 +13,6 @@
                 </li>
                 <li v-if="loggedIn" class="sm:mr-4 md:mr-6 font-semibold hover:text-indigo-200">
                    <router-link :to="{name: 'Chat',params:{alias: alias}}">Chat</router-link>
-                </li>
-                <li v-if="loggedIn" class="sm:mr-4 md:mr-6 font-semibold hover:text-indigo-200">
-                   <router-link :to="{name: 'Friends'}">Friends</router-link>
                 </li>
                 <li v-if="loggedIn" class="sm:mr-4 md:mr-6 font-semibold hover:text-indigo-200">
                     <a class="cursor-pointer" @click="signout()">SignOut</a>
@@ -36,9 +33,6 @@
                     </li>
                      <li  v-if="loggedIn" @click="showMenu=false" class="text-gray-700 py-2 border-b border-gray-200 mt-4 font-bold text-center hover:bg-gray-200 cursor-pointer rounded">
                         <router-link :to="{name: 'Chat', params:{alias: alias}}">Chat</router-link>
-                    </li>
-                    <li  v-if="loggedIn" @click="showMenu=false" class="text-gray-700 py-2 border-b border-gray-200 mt-4 font-bold text-center hover:bg-gray-200 cursor-pointer rounded">
-                        <router-link :to="{name: 'Friends'}">Friends</router-link>
                     </li>
                     <li  v-if="loggedIn" class="text-gray-700 py-2 border-b border-gray-200 mt-4 font-bold text-center hover:bg-gray-200 cursor-pointer rounded">
                         <a class="cursor-pointer" @click="signout()">SignOut</a>

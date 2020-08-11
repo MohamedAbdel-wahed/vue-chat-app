@@ -4,7 +4,6 @@ import Home from '../views/Home'
 import Signup from '@/components/Signup'
 import Signin from '@/components/Signin'
 import Chat from '@/components/Chat'
-import Friends from '@/components/Friends'
 import NotFound from '@/components/NotFound'
 import db from '@/firebase/init'
 import firebase from 'firebase/app'
@@ -63,11 +62,6 @@ export default new VueRouter({
           }
         })
       }
-    },
-    {
-      path: '/friends',
-      name: 'Friends',
-      component: Friends
     },
     {
       path:'*',
